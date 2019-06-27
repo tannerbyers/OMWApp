@@ -16,7 +16,7 @@ app.post('/', function(req, res) {
         form: {
             phone: (req.body.toPhoneNumber),
             message: (req.body.textMessage),
-            key: 'e444f6d20de953c88c4fee6a37929f3fa5f136f1XDfrhrjRo1vUw0pKOpj9UcFIB',
+            key: 'textbelt',
         },
     }, function(err, httpResponse, body) {
         if (err) {
