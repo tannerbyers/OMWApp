@@ -76,6 +76,7 @@
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("ResponseData").innerHTML =
                         this.responseText;
+                    console.log("received message" + this.responseText);
                 }
             };
             xhttp.open("Post", "/", true);
@@ -87,10 +88,8 @@
                 toPhoneNumber: phoneNumberTo,
                 textMessage: TextMSG
             }
-
-            // xhttp.send(JSON.stringify(testingphonenum));
             xhttp.send(JSON.stringify(sentdata));
-            console.log(JSON.stringify(sentdata))
+            console.log("sent message" + JSON.stringify(sentdata))
 
         }
     </script>
