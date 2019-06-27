@@ -28,6 +28,7 @@ app.post('/', function(req, res) {
 
 
     res.send(req.body.textMessage);
+    res.send(err);
     console.log("Message: " + req.body.textMessage);
     console.log("Message sent to Phone Number: " + req.body.toPhoneNumber);
 
