@@ -23,11 +23,17 @@ app.post('/', function(req, res) {
             console.error('Error:', err);
             return;
         }
-        console.log(JSON.parse(body));
-        res.send(JSON.parse(body));
+
+        APIResponse = JSON.parse(body);
+        console.log(APIResponse);
+
+        ValidResponseFromAPI = APIResponse.search("true");
+        if (ValidResponseFromAPI > 1) {
+            res.send(APIResponse);
+        } else {
+            res.send(req.body.textMessage);
+        }
     })
-
-
 
     console.log("Message: " + req.body.textMessage);
     console.log("Message sent to Phone Number: " + req.body.toPhoneNumber);
