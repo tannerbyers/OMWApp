@@ -15,6 +15,7 @@
 }
 
 .sent-text-section {
+    transition: all 1s ease;
     padding: 5px;
     margin: 0 auto;
     position: relative;

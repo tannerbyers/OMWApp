@@ -20,7 +20,6 @@ function sendTestText() {
         textMessage: TextMSG
     }
     xhttp.send(JSON.stringify(sentdata));
-    console.log("sent message" + JSON.stringify(sentdata))
-
+    console.log("sent message" + JSON.stringify(sentdata));
 
 }

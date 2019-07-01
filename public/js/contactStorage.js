@@ -24,7 +24,6 @@ function SaveContactData() {
         localStorage.setItem('Contacts', JSON.stringify(Contacts));
     }
     fetchContacts();
-
 }
 
 function fetchContacts() {
