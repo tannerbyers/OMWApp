@@ -117,3 +117,24 @@
         opacity: 1;
     }
 }
+
+.contactlist {
+    padding: 1vh;
+    font-size: .5em;
+    color: #444;
+    border: 1px solid #CCC;
+    background: #DDD;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    max-width: 100px;
+}
+
+.contactlist:active {
+    color: grey;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
+}
+
+.xbutton {
+    color: red;
+    font-size: 2em;
+}

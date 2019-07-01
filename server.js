@@ -5,10 +5,6 @@ var request = require('request');
 const path = require('path');
 const router = express.Router();
 
-// app.get('/', function(req, res) {
-//     res.send('Hello World2');
-// })
-
 app.use(bodyParser.json());
 app.post('/', function(req, res) {
 
