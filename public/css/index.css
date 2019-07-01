@@ -119,14 +119,12 @@
 }
 
 .contactlist {
-    padding: 1vh;
-    font-size: .5em;
+    font-size: .3em;
     color: #444;
     border: 1px solid #CCC;
     background: #DDD;
     box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    max-width: 100px;
 }
 
 .contactlist:active {
@@ -136,5 +134,17 @@
 
 .xbutton {
     color: red;
-    font-size: 2em;
+    font-size: 1em;
+}
+
+.parent {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    flex: 1 1 0px;
+    margin: 1%;
+    padding: 3%;
+    padding-right: 15px;
 }

@@ -98,7 +98,7 @@
                                                         <span><h4>Contact Name</h4><input id="NewContact" type="text"></span>
                                                     </div>
                                                     <div>
-                                                        <span><h4 >Contact Phone Number</h4><input id="NewContactNumber" type="text"></span>
+                                                        <span><h4 >Contact Phone Number</h4><input id="NewContactNumber" type="number"></span>
                                                     </div>
                                                 </form>
                                             </div>
@@ -114,9 +114,10 @@
 
                             </div>
                     </div>
-                    <input placeholder="To Phone Number" type='text' name="ToPhoneNumber" id="ToPhoneNumber" class="message-input"></input>
-                    <Container class="">
-                        <div class="row" id="contactResults"> </div>
+                    <input placeholder="To Phone Number" type="number" name="ToPhoneNumber" id="ToPhoneNumber" class="message-input"></input>
+                    <Container>
+                        <div class="parent" id="contactResults">
+                        </div>
                     </Container>
                     <input placeholder="Hey, I'm on my way home. See you soon" type='text' name="TextMessage" id="TextMessage" class="message-input" value="Hey, I'm on my way home. See you soon"></input>
                     <br>

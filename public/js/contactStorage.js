@@ -1,9 +1,4 @@
-function encodeHTML(s) { var regex = /(<([^>]+)>)/ig; return s.replace(regex, ""); }
-
 function SaveContactData() {
-
-    // var key = encodeHTML(document.getElementById("NewContact").value);
-    // var value = encodeHTML(document.getElementById("NewContactNumber").value);
 
     var key = document.getElementById("NewContact").value;
     var value = document.getElementById("NewContactNumber").value;
@@ -43,12 +38,7 @@ function fetchContacts() {
         var Contact = Contacts[i].Contact;
         var PhoneNumber = Contacts[i].PhoneNumber;
 
-        // ContactsResults.innerHTML += '<div' +
-        //     '<h3 onclick="inputcontactphone(`${PhoneNumber}`)" class="contactlist" value=' + PhoneNumber + '>' + Contact + '<span class="xbutton" onclick="deleteContact(' + PhoneNumber + ')">  X<span>'
-        // '</h3> ' +
-        // '</div> &nbsp;';
-
-        ContactsResults.innerHTML += `<div class="col-xl-1"><h3 onclick="inputcontactphone('${PhoneNumber}')" class="contactlist" value="${PhoneNumber}">${Contact}<span class="xbutton" onclick="deleteContact('${PhoneNumber}')">X</span></h3></div>`;
+        ContactsResults.innerHTML += `<div class="column contactlist"><h3 onclick="inputcontactphone('${PhoneNumber}')" class="" value="${PhoneNumber}">${Contact}<span class="xbutton" onclick="deleteContact('${PhoneNumber}')">X</span></h3></div>`;
     }
 }
 
