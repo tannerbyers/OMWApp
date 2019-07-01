@@ -25,14 +25,14 @@ app.post('/', function(req, res) {
         }
 
         APIResponse = JSON.parse(body);
-        console.log(APIResponse);
+        console.log(APIResponse.success);
 
-        ValidResponseFromAPI = APIResponse.search("true");
-        if (ValidResponseFromAPI > 1) {
-            res.send(APIResponse);
-        } else {
+        if (APIResponse.success) {
             res.send(req.body.textMessage);
+        } else {
+            res.send(APIResponse.error)
         }
+
     })
 
     console.log("Message: " + req.body.textMessage);

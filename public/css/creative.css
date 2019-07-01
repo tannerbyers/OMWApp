@@ -7204,14 +7204,14 @@ a.close.disabled {
 }
 
 .bg-primary {
-    background-color: #6542f4 !important;
+    background-color: #f8f9fa !important;
 }
 
 a.bg-primary:hover,
 a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-    background-color: #6542f4 !important;
+    background-color: #f8f9fa !important;
 }
 
 .bg-secondary {

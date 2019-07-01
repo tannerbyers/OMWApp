@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <base href="/">
     <title>OMW App</title>
 
     <!-- Font Awesome Icons -->
@@ -66,33 +66,6 @@
             </div>
         </div>
     </header>
-
-    <script>
-        function sendTestText() {
-
-            var xhttp = new XMLHttpRequest();
-
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("ResponseData").innerHTML =
-                        this.responseText;
-                    console.log("received message" + this.responseText);
-                }
-            };
-            xhttp.open("Post", "/", true);
-            xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            TextMSG = document.getElementById("TextMessage").value;
-            phoneNumberTo = document.getElementById("ToPhoneNumber").value;
-
-            var sentdata = {
-                toPhoneNumber: phoneNumberTo,
-                textMessage: TextMSG
-            }
-            xhttp.send(JSON.stringify(sentdata));
-            console.log("sent message" + JSON.stringify(sentdata))
-
-        }
-    </script>
     <!-- About Section -->
     <section class="page-section bg-primary" id="sendmessage">
         <div class="texting-section">
@@ -102,13 +75,52 @@
                         <h2 class="mt-0">On My Way Text</h2>
                         <p>Send a quick text with the default I'm on my way message.</p>
                         <hr class="divider light my-4">
-                        <input placeholder="To Phone Number" type='text' name="ToPhoneNumber" id="ToPhoneNumber" class="message-input"></input>
-                        <input placeholder="Hey, I'm on my way home. See you soon" type='text' name="TextMessage" id="TextMessage" class="message-input" value="Hey, I'm on my way home. See you soon"></input>
-                        <br>
-                        <a onclick="sendTestText()" class="btn btn-light btn-xl js-scroll-trigger" href="#services">Send Text</a>
+                        <form>
+                            <div class="container">
+                                <!-- Trigger the modal with a button -->
+                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Contact</button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Modal Header</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <p>Add Your Saved Contact Below!</p>
+                                                <div>
+                                                    <span><h4>Contact Name</h4><input id="NewContact" type="text"></span>
+                                                </div>
+                                                <div>
+                                                    <span><h4 >Contact Phone Number</h4><input id="NewContactNumber" type="text"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" data-dismiss="modal" class="btn btn-primary" onclick="SaveContactData()">Add Contact</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
                     </div>
+                    <input placeholder="To Phone Number" type='text' name="ToPhoneNumber" id="ToPhoneNumber" class="message-input"></input>
+
+                    <input placeholder="Hey, I'm on my way home. See you soon" type='text' name="TextMessage" id="TextMessage" class="message-input" value="Hey, I'm on my way home. See you soon"></input>
+                    <br>
+                    <a onclick="sendTestText()" class="btn btn-light btn-xl js-scroll-trigger" href="#services">Send Text</a>
+                    </form>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -155,16 +167,52 @@
         </div>
     </footer>
 
+    <script>
+        function SaveContactData() {
+            var key = document.getElementById("NewContact").value;
+            var value = document.getElementById("NewContactNumber").value;
+
+            localStorage.setItem(key, value);
+        }
+
+        function sendTestText() {
+
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("ResponseData").innerHTML =
+                        this.responseText;
+                    console.log("received message" + this.responseText);
+                }
+            };
+
+            xhttp.open("Post", "/", true);
+            xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            TextMSG = document.getElementById("TextMessage").value;
+            phoneNumberTo = document.getElementById("ToPhoneNumber").value;
+
+            var sentdata = {
+                toPhoneNumber: phoneNumberTo,
+                textMessage: TextMSG
+            }
+            xhttp.send(JSON.stringify(sentdata));
+            console.log("sent message" + JSON.stringify(sentdata))
+
+
+        }
+    </script>
     <!-- Bootstrap core JavaScript -->
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="./vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="./vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/creative.min.js"></script>
+    <script src="./js/creative.js"></script>
+
 
 </body>
 
