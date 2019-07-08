@@ -8,8 +8,7 @@ const router = express.Router();
 app.use(bodyParser.json());
 app.post('/', function(req, res) {
 
-    // request.post('https://textbelt.com/text', {
-    request.post('https://test.com/text', {
+    request.post('https://textbelt.com/text', {
         form: {
             phone: (req.body.toPhoneNumber),
             message: (req.body.textMessage),
@@ -17,12 +16,12 @@ app.post('/', function(req, res) {
         },
     }, function(err, httpResponse, body) {
         if (err) {
-            console.error('Error:', err);
+            console.errogit add * r('Error:', err);
             return;
         }
 
-        // APIResponse = JSON.parse(body);
-        // console.log(APIResponse.success);
+        APIResponse = JSON.parse(body);
+        console.log(APIResponse.success);
 
         if (APIResponse.success) {
             res.send(req.body.textMessage);
