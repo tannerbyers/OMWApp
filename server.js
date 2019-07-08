@@ -16,7 +16,7 @@ app.post('/', function(req, res) {
         },
     }, function(err, httpResponse, body) {
         if (err) {
-            console.errogit add * r('Error:', err);
+            console.error('Error:', err);
             return;
         }
 
