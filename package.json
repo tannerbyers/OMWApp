@@ -37,7 +37,8 @@
         "jquery.easing": "^1.4.1",
         "magnific-popup": "^1.1.0",
         "request": "^2.88.0",
-        "twilio": "^3.32.0"
+        "twilio": "^3.32.0",
+        "validate.js": "^0.13.1"
     },
     "devDependencies": {
         "browser-sync": "2.26.7",
