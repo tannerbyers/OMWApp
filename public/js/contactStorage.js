@@ -37,7 +37,7 @@ function fetchContacts() {
         var Contact = Contacts[i].Contact;
         var PhoneNumber = Contacts[i].PhoneNumber;
 
-        ContactsResults.innerHTML += `<div class="column contactlist"><h3 onclick="inputcontactphone('${PhoneNumber}')" class="" value="${PhoneNumber}">${Contact}<span class="xbutton" onclick="deleteContact('${PhoneNumber}')">X</span></h3></div>`;
+        ContactsResults.innerHTML += `<div class="btn btn-light"><h3 onclick="inputcontactphone('${PhoneNumber}')" class="" value="${PhoneNumber}">${Contact}<span class="xbutton" onclick="deleteContact('${PhoneNumber}')">X</span></h3></div>`;
     }
 }
 
