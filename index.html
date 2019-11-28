@@ -95,7 +95,13 @@
                                                         <span><h4>Contact Name</h4><input id="NewContact" type="text"></span>
                                                     </div>
                                                     <div>
-                                                        <span><h4 >Contact Phone Number</h4><input id="NewContactNumber" type="number"></span>
+                                                        <span>
+                                                            <h4 >Contact Phone Number</h4>
+                                                            <input 
+                                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                            type = "number"
+                                                            maxlength = "10" 
+                                                            onkeydown="return event.keyCode !== 69" id="NewContactNumber" type="number"></span>
                                                     </div>
                                                 </form>
                                             </div>
@@ -111,7 +117,16 @@
 
                             </div>
                     </div>
-                    <input placeholder="To Phone Number" type="number" name="ToPhoneNumber" id="ToPhoneNumber" class="message-input" min="10" max="13"></input>
+                    <input 
+                    onkeydown="return event.keyCode !== 69" placeholder="To Phone Number" 
+                    type="number" 
+                    name="ToPhoneNumber" 
+                    id="ToPhoneNumber" 
+                    class="message-input"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    maxlength = "10" 
+                    >
+                    </input>
                     <!-- Trigger the modal with a button -->
                     <button type="button" class="btn contact-btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><span>+</span></button>
                     <Container></Container>
