@@ -161,3 +161,7 @@
     margin-right: 3%;
     width: 3em;
 }
+
+.ExceededContactList {
+    color: red
+}

@@ -1,3 +1,5 @@
+let ExceededContactList = document.getElementById("ExceededContactList")
+
 function SaveContactData() {
 
     var key = document.getElementById("NewContact").value;
@@ -18,6 +20,13 @@ function SaveContactData() {
     } else {
         // Get Contacts from localStorage
         var Contacts = JSON.parse(localStorage.getItem('Contacts'));
+        console.log(Contacts.length)
+        if (Contacts.length > 2) {
+            
+            ExceededContactList.innerHTML = `<div class="ExceededContactList" >Only Three Contacts Can Be Saved Currently</div>`;
+            return 
+        }
+        ExceededContactList.innerHTML = `<div></div>`;
         // Add Contacts to array
         Contacts.push(Contact);
         // Re-set back to localStorage
@@ -50,6 +59,7 @@ function deleteContact(PhoneNumber) {
         if (Contacts[i].PhoneNumber == PhoneNumber) {
             // Remove from array
             Contacts.splice(i, 1);
+            ExceededContactList.innerHTML = `<div class="ExceededContactList" ></div>`;
         }
     }
     // Re-set back to localStorage
